@@ -12,8 +12,9 @@ vue,babel 都是用这种，在 publish 的时候,会在 lerna.json 文件里面
 
 ### Independent mode
 
-lerna init --independent 初始化项目。
-lerna.json 文件里面"version": "independent",
+`lerna init --independent` 初始化项目。
+
+`lerna.json` 文件里面`"version": "independent"`,
 
 每次 publish 时，您都将得到一个提示符，提示每个已更改的包，以指定是补丁、次要更改、主要更改还是自定义更改。
 
@@ -82,7 +83,7 @@ $ tree
 7 directories, 10 files
 ```
 
-### 分别给相应的 package 增加依赖模块
+## 依赖管理
 
 > `yarn`是`lerna`的最佳搭档。
 
@@ -114,16 +115,27 @@ $ tree
 }
 ```
 
-**`lerna add <package>[@version] [--dev] [--exact]`**
+### 安装依赖
 
-增加本地或者远程 package 做为当前项目 packages 里面的依赖
-
-- `--dev` devDependencies 替代 dependencies
-- `--exact` 安装准确版本，就是安装的包版本前面不带^, `Eg: "^2.20.0" ➜ "2.20.0"`
+只要在项目主目录下执行
 
 ```bash
-$ lerna add chalk #为所有 package 增加 chalk 模块
-$ lerna add semver --scope pkg-a        # 为 pkg-a  增加 semver 模块
+$ yarn install
+```
+
+yarn 会自动读取 workspace 配置，就能自动安装、处理、软链接各个子包的依赖，统一放在根目录下。也可以使用 lerna 的安装命令
+
+```bash
+$ lerna bootstrap
+```
+
+但可能不如 yarn 的包管理机制好用，可以看这篇文章[《Lerna 的依赖管理及 hoisting 浅析》](https://yrq110.me/post/tool/how-lerna-manage-package-dependencies/)
+
+### 增删依赖
+
+```bash
+$ lerna add chalk                 # 为所有 package 增加 chalk 模块
+$ lerna add semver --scope pkg-a  # 为 pkg-a  增加 semver 模块
 $ lerna add pkg-a  --scope pkg-b  # 增加内部模块之间的依赖
 ```
 
@@ -137,7 +149,73 @@ $ yarn workspace pkg-b add pkg-a@1.0.0 # 这里必须加上版本号，否则报
 
 更多请查看[`lerna add`](https://github.com/lerna/lerna/tree/main/commands/add#readme)
 
+yarn 更多命令
+
+主项目添加依赖
+
+```bash
+$ yarn add -W -D [packageName]
+```
+
+> -W 是指定在项目根目录执行命令
+
+删除公共依赖
+
+```bash
+$ yarn remove -W -D [packageName]
+```
+
+给所有子项目增删依赖
+
+```bash
+$ yarn workspaces run add [packageName]
+$ yarn workspaces run remove [packageName]
+```
+
+给某个项目增删依赖
+
+```bash
+$ yarn workspace [packageNameA] add [packageNameB] // packageNameA是指定安装依赖的包名，packageNameB是公共的包名或者项目内的包名
+```
+
+```bash
+$ yarn workspace [packageName] remove [packageName]
+```
+
+当项目依赖凌乱的时候，可以使用命令清理依赖
+
+```bash
+$ lerna clean
+```
+
+其余还有一些命令如下，更多命令参考[lerna](https://github.com/lerna/lerna#readme)
+
+```
+lerna ls // 列出仓库中包信息
+lerna changed // 查看项目变动
+lerna exec // 执行命令
+```
+
+```bash
+lerna run < script > -- [..args] # 运行所有包里面的有这个script的命令
+$ lerna run --scope my-component test
+```
+
+```bash
+yarn workspaces info // 查看项目内信息
+```
+
+## 构建
+
+使用`lerna run`命令构建项目
+
+```bash
+$ lerna run build // 会执行子包中build命令构建
+```
+
 ## 发布
+
+git version_bump 完成后，就可以根据 version 生成的 tag 进行 npm 发包了
 
 ```bash
 $ lerna publish
@@ -190,6 +268,10 @@ $ lerna version
 }
 ```
 
+### ​changelog.md​
+
+version 完成后会自动生成 changelog.md
+
 ## 参考链接
 
 - [lerna](https://github.com/lerna/lerna#readme)
@@ -197,3 +279,4 @@ $ lerna version
 - [基于 lerna 和 yarn workspace 的 monorepo 工作流](https://zhuanlan.zhihu.com/p/71385053)
 - [Lerna 中文教程详解](https://segmentfault.com/a/1190000019350611)
 - [大前端项目代码重用，也许 lerna 是最好的选择](https://segmentfault.com/a/1190000023160081)
+- [使用 Lerna、Yarn 管理 Monorepo 项目](https://segmentfault.com/a/1190000039795228)
