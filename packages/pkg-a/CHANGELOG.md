@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/MrSeaWave/lerna-demo/compare/pkg-a@1.2.3...pkg-a@1.3.0) (2021-06-04)
+
+
+### Features
+
+* update index.js ([dc25b90](https://github.com/MrSeaWave/lerna-demo/commit/dc25b9095329e63b131b4499ce4990fe175464e2))
+
+
+
+
+
 ## [1.2.1](https://github.com/MrSeaWave/lerna-demo/compare/pkg-a@1.2.0...pkg-a@1.2.1) (2021-06-04)
 
 **Note:** Version bump only for package pkg-a
