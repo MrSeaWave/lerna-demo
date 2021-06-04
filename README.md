@@ -159,6 +159,37 @@ lerna 官方不支持仅发布某个 package，见 https://github.com/lerna/lern
 $ lerna version --conventional-commits
 ```
 
+**自动确立了版本更新**
+
+> 经测试 version_bump 是依赖于文件检测和 subject 结合，并不依赖于 scope，scope 的作用是用来生成 changelog 的吧，即如果是修改了 pkg-b 的文件，但是 commit 记录写的是 fix(pkg-a)，lerna 是会生成 pkg-b 的版本更新，并不会去更新 pkg-a 的版本
+
+### 手动选择发布版本
+
+如果 git commit message 发现不太靠谱，且无法修改的话，那么需要手动的确认新版本，version 默认是手动选择版本
+
+```bash
+$ lerna version
+```
+
+> version 成功后会自动的推送到主分支
+
+> lerna version 自动生成的提交格式为“ publish xxx",并不符合 conventional-commit 规范，因此需要加以修改，我们通过 message 参数可以修改自动生成的提交记录
+
+```json
+// lerna.json
+{
+  "packages": ["packages/*"],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "message": "chore: publish"
+    }
+  }
+}
+```
+
 ## 参考链接
 
 - [lerna](https://github.com/lerna/lerna#readme)
