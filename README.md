@@ -143,11 +143,21 @@ $ yarn workspace pkg-b add pkg-a@1.0.0 # 这里必须加上版本号，否则报
 $ lerna publish
 ```
 
+### 不支持只发布某个 package
+
 lerna 官方不支持仅发布某个 package，见 https://github.com/lerna/lerna/issues/1691，如果需要，只能自己手动的进入package进行发布，这样lerna自带的各种功能就需要手动完成且可能和lerna的功能相互冲突
 
 由于 lerna 会自动的监测 git 提交记录里是否包含指定 package 的文件修改记录，来确定版本更新，这要求设置好合理的 ignore 规则（否则会造成频繁的，无意义的某个版本更新），好处是其可以自动的帮助 package 之间更新版本
 
 例如如果`pkg-b` 依赖了 `pkg-a`，如果 `pkg-a` 发生了版本变动，会自动的将 `pkg-b` 的对 `pkg-a` 版本依赖更新为 `pkg-a` 的最新版本。 如果 `pkg-b` 发生了版本变动，对 `pkg-a` 并不会造成影响。
+
+### 自动选择版本
+
+使用`--conventional-commits` 参数会自动的根据`conventional commit`规范和`git commit message`记录帮忙确定更新的版本号。
+
+```bash
+$ lerna version --conventional-commits
+```
 
 ## 参考链接
 
