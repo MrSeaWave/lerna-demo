@@ -1,6 +1,6 @@
 {
   "name": "pkg-b",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,6 @@
   "dependencies": {
     "chalk": "^4.1.1",
     "lodash": "^4.17.21",
-    "pkg-a": "^1.2.2"
+    "pkg-a": "^1.2.3"
   }
 }
