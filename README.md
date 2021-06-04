@@ -18,7 +18,7 @@ vue,babel 都是用这种，在 publish 的时候,会在 lerna.json 文件里面
 
 每次 publish 时，您都将得到一个提示符，提示每个已更改的包，以指定是补丁、次要更改、主要更改还是自定义更改。
 
-TODO 缺图片
+![图片](https://cdn.jsdelivr.net/gh/MrSeaWave/figure-bed-profile@main/uPic/2021/Ny4pMd_F9bXF4.png)
 
 ## 项目构建
 
