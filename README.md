@@ -218,8 +218,25 @@ $ lerna run build // 会执行子包中build命令构建
 git version_bump 完成后，就可以根据 version 生成的 tag 进行 npm 发包了
 
 ```bash
-$ lerna publish
+$ lerna publish              # 发布自上一个版本以来发生了变化的包
+$ lerna publish from-git     # 发布当前提交中标记的包
+$ lerna publish from-package # 发布注册表中没有最新版本的包
 ```
+
+在运行时，该命令做了下面几件事中的一个：
+
+- 发布自上一个版本以来更新的包(背后调用了 lerna version)。
+  - 这是 lerna 2.x 版本遗留下来的。
+- 发布在当前提交中标记的包(from-git)。
+- 发布在最新提交时注册表中没有版本的包(from-package)。
+- 发布在前一次提交中更新的包(及其依赖项)的“金丝雀(canary)”版。
+
+> 注意
+> Lerna 永远不会发布标记为 private 的包（package.json 中的”private“: true）
+
+在所有的发布过程中，都有[生命周期](https://github.com/lerna/lerna/tree/main/commands/publish#lifecycle-scripts)在根目录和每个包中运行(除非使用了--ignore-scripts)。
+
+请查看[每个包的配置](https://github.com/lerna/lerna/tree/main/commands/publish#per-package-configuration)以了解发布作用域限定的包、自定义注册表和自定义标记的详细信息。
 
 ### 不支持只发布某个 package
 
@@ -275,6 +292,7 @@ version 完成后会自动生成 changelog.md
 ## 参考链接
 
 - [lerna](https://github.com/lerna/lerna#readme)
+- [lerna](http://www.febeacon.com/lerna-docs-zh-cn/routes/commands/publish.html)
 - [基于 Lerna 管理 packages 的 Monorepo 项目最佳实践](https://segmentfault.com/a/1190000020047120)
 - [基于 lerna 和 yarn workspace 的 monorepo 工作流](https://zhuanlan.zhihu.com/p/71385053)
 - [Lerna 中文教程详解](https://segmentfault.com/a/1190000019350611)
