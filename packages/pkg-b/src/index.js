@@ -1,3 +1,3 @@
 const a = require('demo-pkg-a');
 
-console.log('demo-pkg-b---', a);
+console.log('demo-pkg-b--->', a);
