@@ -246,9 +246,27 @@ lerna 官方不支持仅发布某个 package，见 [issues/1691](https://github.
 
 例如如果`pkg-b` 依赖了 `pkg-a`，如果 `pkg-a` 发生了版本变动，会自动的将 `pkg-b` 的对 `pkg-a` 版本依赖更新为 `pkg-a` 的最新版本。 如果 `pkg-b` 发生了版本变动，对 `pkg-a` 并不会造成影响。
 
-### 自动生成 CHANGELOG
+### 版本迭代
 
-当您使用这个参数运行时，`lerna version`将使用[传统的提交规范](https://www.conventionalcommits.org/en/)来确定版本并生成 [CHANGELOG.md 文件](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
+lerna 通过 version 命令来为各个模块进行版本迭代。基本命令如下：
+
+```bash
+$ lerna version [major | minor | patch | premajor | preminor | prepatch | prerelease]
+```
+
+如果不选择此次迭代类型，则会进入交互式的提示流程来确定此次迭代类型
+
+例如：
+
+```bash
+$ lerna version 1.0.1 # 按照指定版本进行迭代
+$ lerna version patch # 根据 semver 迭代版本号最后一位
+$ lerna version       # 进入交互流程选择迭代类型
+```
+
+#### 自动生成 CHANGELOG
+
+当您使用这个参数运行时，`lerna version`将使用[传统的提交规范](https://www.conventionalcommits.org/en/)来[确定版本](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-recommended-bump)并生成 [CHANGELOG.md 文件](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
 
 ```bash
 $ lerna version --conventional-commits
@@ -258,7 +276,7 @@ $ lerna version --conventional-commits
 
 > 经测试 version_bump 是依赖于文件检测和 subject 结合，并不依赖于 scope，scope 的作用是用来生成 changelog 的吧，即如果是修改了 pkg-b 的文件，但是 commit 记录写的是 fix(pkg-a)，lerna 是会生成 pkg-b 的版本更新，并不会去更新 pkg-a 的版本
 
-### 手动选择发布版本
+#### 手动选择发布版本
 
 如果 git commit message 发现不太靠谱，且无法修改的话，那么需要手动的确认新版本，version 默认是手动选择版本
 
@@ -284,10 +302,6 @@ $ lerna version
   }
 }
 ```
-
-### ​changelog.md​
-
-version 完成后会自动生成 changelog.md
 
 ## 参考链接
 
