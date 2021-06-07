@@ -5,7 +5,7 @@
   "keywords": [],
   "author": "MrSeaWave <774866545@qq.com>",
   "license": "ISC",
-  "main": "lib/pkg-d.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"

@@ -2,7 +2,7 @@
   "name": "demo-pkg-a",
   "version": "1.4.0-alpha.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "node ./scripts/build.js",
     "prepublishOnly": "npm run build",
