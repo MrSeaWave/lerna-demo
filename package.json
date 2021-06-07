@@ -1,8 +1,26 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,json,css,md}": [
+      "prettier -w",
+      "git add"
+    ],
+    "**/*.{js}": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "husky": "^6.0.0",
+    "lerna": "^4.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1"
   },
   "workspaces": [
     "packages/*"
