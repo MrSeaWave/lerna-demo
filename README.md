@@ -246,9 +246,9 @@ lerna 官方不支持仅发布某个 package，见 [issues/1691](https://github.
 
 例如如果`pkg-b` 依赖了 `pkg-a`，如果 `pkg-a` 发生了版本变动，会自动的将 `pkg-b` 的对 `pkg-a` 版本依赖更新为 `pkg-a` 的最新版本。 如果 `pkg-b` 发生了版本变动，对 `pkg-a` 并不会造成影响。
 
-### 自动选择版本
+### 自动生成 CHANGELOG
 
-使用`--conventional-commits` 参数会自动的根据`conventional commit`规范和`git commit message`记录帮忙确定更新的版本号。
+当您使用这个参数运行时，`lerna version`将使用[传统的提交规范](https://www.conventionalcommits.org/en/)来确定版本并生成 [CHANGELOG.md 文件](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
 
 ```bash
 $ lerna version --conventional-commits

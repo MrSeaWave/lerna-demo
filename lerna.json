@@ -4,8 +4,9 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {
-    "publish": {
-      "message": "chore: publish"
+    "version": {
+      "message": "chore(release): publish %s",
+      "conventionalCommits": true
     }
   }
 }
