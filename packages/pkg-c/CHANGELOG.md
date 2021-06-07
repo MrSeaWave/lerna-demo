@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/MrSeaWave/lerna-demo/compare/demo-pkg-c@1.1.1...demo-pkg-c@1.1.2) (2021-06-07)
+
+
+### Bug Fixes
+
+* test ([e0e37e9](https://github.com/MrSeaWave/lerna-demo/commit/e0e37e9351959b735ecc9ff4bbbee6b5fd38f30d))
+
+
+
+
+
 ## [1.1.1](https://github.com/MrSeaWave/lerna-demo/compare/demo-pkg-c@1.1.0...demo-pkg-c@1.1.1) (2021-06-07)
 
 **Note:** Version bump only for package demo-pkg-c
