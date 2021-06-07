@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "father-build",
+    "test": "jest",
     "postinstall": "husky install"
   },
   "lint-staged": {
@@ -16,9 +17,20 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@types/jest": "^26.0.23",
     "@types/node": "^15.12.1",
+    "babel-jest": "^27.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "father-build": "^1.19.6",
     "husky": "^6.0.0",
     "jest": "^27.0.4",
