@@ -1,1 +1,1 @@
-console.log('pkg-c-b-----');
+console.log('pkg-c-----');
