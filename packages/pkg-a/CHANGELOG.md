@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0-alpha.0](https://github.com/MrSeaWave/lerna-demo/compare/demo-pkg-a@1.3.3-alpha.0...demo-pkg-a@1.4.0-alpha.0) (2021-06-07)
+
+
+### Features
+
+* add build.js ([77587f5](https://github.com/MrSeaWave/lerna-demo/commit/77587f5394a9dba8a4f944340ce455b2ef0b57d8))
+
+
+
+
+
 ## [1.3.3-alpha.0](https://github.com/MrSeaWave/lerna-demo/compare/demo-pkg-a@1.3.2...demo-pkg-a@1.3.3-alpha.0) (2021-06-07)
 
 
