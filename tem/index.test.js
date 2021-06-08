@@ -1,8 +1,7 @@
-import pkgA from './index';
+import rootRes from './index';
 
-describe('pkg-a', () => {
+describe('root', () => {
   it('needs tests', () => {
-    console.log('pkg', pkgA);
-    expect(pkgA).toBeTruthy();
+    expect(rootRes).toBeTruthy();
   });
 });

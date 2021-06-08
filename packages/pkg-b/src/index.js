@@ -1,3 +1,3 @@
-const a = require('demo-pkg-a');
+import a from 'demo-pkg-a';
 
-console.log('demo-pkg-b------>', a);
+export default 'pkg-b' + a;
