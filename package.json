@@ -10,10 +10,11 @@
     "postinstall": "husky install"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": [
+    "*.{json,css,md}": [
       "prettier -w"
     ],
     "*.{js}": [
+      "prettier -w",
       "npm run lint:fix"
     ]
   },
