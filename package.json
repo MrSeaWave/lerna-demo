@@ -11,12 +11,10 @@
   },
   "lint-staged": {
     "*.{js,json,css,md}": [
-      "prettier -w",
-      "git add"
+      "prettier -w"
     ],
     "*.{js}": [
-      "npm run lint:fix",
-      "git add"
+      "npm run lint:fix"
     ]
   },
   "devDependencies": {
