@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 
-function sum(a, b) {
-  console.log(chalk.green('params:'), a, b);
+function sum (a, b) {
+  console.log(chalk.green('sum params:'), a, b);
   return a + b;
 }
 

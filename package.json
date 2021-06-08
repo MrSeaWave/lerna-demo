@@ -13,7 +13,7 @@
     "*.{json,css,md}": [
       "prettier -w"
     ],
-    "*.{js}": [
+    "*.js": [
       "prettier -w",
       "npm run lint:fix"
     ]
