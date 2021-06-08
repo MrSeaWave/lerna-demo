@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "father-build",
+    "release": "npm run build && lerna publish",
     "test": "jest",
     "postinstall": "husky install"
   },

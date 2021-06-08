@@ -15,3 +15,9 @@
 - 各 package 发布时只发布 dist 目录，不发布 src 目录
 
 > 因为 dist 是 Babel 编译后的目录，我们在搜索时不希望搜索它的内容，所以在工程的设置中把 dist 目录排除在搜索的范围之外。
+
+```bash
+$ npm run release
+```
+
+> publish 之前运行 npm run build
