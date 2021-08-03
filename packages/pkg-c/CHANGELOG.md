@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/MrSeaWave/lerna-demo/compare/demo-pkg-c@2.2.0...demo-pkg-c@2.3.0) (2021-08-03)
+
+
+### Features
+
+* test ([1fd392c](https://github.com/MrSeaWave/lerna-demo/commit/1fd392c83de084d84b7b9b0774c9b7790795f2ba))
+* test ([1d4dc26](https://github.com/MrSeaWave/lerna-demo/commit/1d4dc260d01a93f248b514495cd8f1c11f17e130))
+* tijiao ([15746c8](https://github.com/MrSeaWave/lerna-demo/commit/15746c8866f4055ffbc247802b281e20b74ad3bd))
+
+
+
+
+
 # [2.2.0](https://github.com/MrSeaWave/lerna-demo/compare/demo-pkg-c@2.1.0...demo-pkg-c@2.2.0) (2021-06-08)
 
 
