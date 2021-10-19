@@ -2,7 +2,7 @@
   "name": "@sea-org/demo-pkg-d",
   "version": "0.4.0",
   "description": "pkg-d",
-  "access": "public",
+  "publishConfig": {"access": "public"},
   "keywords": [],
   "author": "MrSeaWave <774866545@qq.com>",
   "license": "ISC",

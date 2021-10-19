@@ -1,2 +1,2 @@
 export { default as pkgD } from './run';
-console.log('pkg - d date');
+console.log('pkg - d last date');
