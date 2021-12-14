@@ -1,6 +1,6 @@
 {
   "name": "@sea-org/demo-pkg-d",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "pkg-d",
   "publishConfig": {
     "access": "public"
