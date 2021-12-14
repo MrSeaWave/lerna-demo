@@ -6,6 +6,7 @@
     "lint:js": "eslint --cache --ext .js,.jsx packages/",
     "lint:fix": "npm run lint:js -- --fix",
     "release": "npm run build && lerna publish",
+    "version": "lerna version",
     "createRelease": "node ./scripts/createRelease.js",
     "test": "jest",
     "postinstall": "husky install"
