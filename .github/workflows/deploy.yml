@@ -1,4 +1,4 @@
-name: Test CI
+name: Deploy CI
 
 on:
   release:
@@ -7,8 +7,8 @@ on:
       - master
 
 jobs:
-  test-ci:
-    name: 'test-ci'
+  deploy-ci:
+    name: 'deploy-ci'
     runs-on: ubuntu-latest
 
     strategy:
