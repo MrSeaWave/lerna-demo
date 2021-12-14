@@ -1,0 +1,27 @@
+name: Test CI
+
+on:
+  release:
+    types: [published]
+    branches:
+      - master
+
+jobs:
+  test-ci:
+    name: 'test-ci'
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@main
+
+      - name: print Env 📄
+        run: |
+          echo "node"
+          node -v
+          echo "npm"
+          npm -v
