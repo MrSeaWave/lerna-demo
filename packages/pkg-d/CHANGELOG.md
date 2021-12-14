@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/MrSeaWave/lerna-demo/compare/@sea-org/demo-pkg-d@0.9.0...@sea-org/demo-pkg-d@0.10.0) (2021-12-14)
+
+
+### Features
+
+* go ([33c6c30](https://github.com/MrSeaWave/lerna-demo/commit/33c6c300b076764f84351ad8da85149bffda63d3))
+
+
+### Reverts
+
+* Revert "chore(release): publish" ([811be46](https://github.com/MrSeaWave/lerna-demo/commit/811be4667b2d6a857b236c27342d946f72cc7537))
+
+
+
+
+
 # [0.9.0](https://github.com/MrSeaWave/lerna-demo/compare/@sea-org/demo-pkg-d@0.9.0...@sea-org/demo-pkg-d@0.9.0) (2021-12-14)
 
 
