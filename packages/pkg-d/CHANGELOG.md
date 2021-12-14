@@ -3,22 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.9.0](https://github.com/MrSeaWave/lerna-demo/compare/@sea-org/demo-pkg-d@0.5.0...@sea-org/demo-pkg-d@0.9.0) (2021-12-14)
-
-
-### Features
-
-* 还原 ([6bbef09](https://github.com/MrSeaWave/lerna-demo/commit/6bbef0979861f9f1fb18f9db7a90870479b07584))
-* update ([479811d](https://github.com/MrSeaWave/lerna-demo/commit/479811d20c9d2e81007a2ed8e0696c29387d0f3b))
-* update ([2a854b2](https://github.com/MrSeaWave/lerna-demo/commit/2a854b293db7d26e9855cec91e7c3e5b20897157))
-* update ([73eb7dc](https://github.com/MrSeaWave/lerna-demo/commit/73eb7dc68512876d243edd2d4a5f3b2accc1f36c))
-* update ([5219d67](https://github.com/MrSeaWave/lerna-demo/commit/5219d6763cf9894bcd5202d6cc4fa76d5e0d2810))
-* update ([19d8dab](https://github.com/MrSeaWave/lerna-demo/commit/19d8dabfe49dfdf58c7f126768f83852b17e67ba))
-
-
-
-
-
 # [0.8.0](https://github.com/MrSeaWave/lerna-demo/compare/@sea-org/demo-pkg-d@0.5.0...@sea-org/demo-pkg-d@0.8.0) (2021-12-14)
 
 
