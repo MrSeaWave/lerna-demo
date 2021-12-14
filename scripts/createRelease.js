@@ -45,11 +45,13 @@ const getMds = (allVersion = false) => {
     const packageInfoPath = path.join(directory, 'package.json');
     // eslint-disable-next-line no-unused-vars
     const content = fs.readFileSync(path.join(directory, './CHANGELOG.md')).toString();
-    const versions = [require(packageInfoPath).version];
+    const info = require(packageInfoPath);
+    const versions = [info.version];
+    const pkgName = info.name;
 
     console.log(versions);
     versions.map((version) => {
-      const versionPkg = `${packageFolder}@${version}`;
+      const versionPkg = `${pkgName}@${version}`;
       const changeLog = 'content' + Math.random(); // getChangelog(content, versionPkg);
       if (!changeLog) {
         return;
