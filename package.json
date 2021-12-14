@@ -6,6 +6,7 @@
     "lint:js": "eslint --cache --ext .js,.jsx packages/",
     "lint:fix": "npm run lint:js -- --fix",
     "release": "npm run build && lerna publish",
+    "createRelease": "node ./scripts/createRelease.js",
     "test": "jest",
     "postinstall": "husky install"
   },
@@ -34,6 +35,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "father-build": "^1.19.6",
+    "github": "^9.2.0",
     "husky": "^6.0.0",
     "jest": "^27.0.4",
     "lerna": "^4.0.0",
