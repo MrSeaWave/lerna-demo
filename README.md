@@ -21,3 +21,5 @@ $ npm run release
 ```
 
 > publish 之前运行 npm run build
+
+> 在 master 分支上提交代码后，自动发布 npm 包，（auto-publish.yml）,自动发布 release
