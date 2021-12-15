@@ -3,6 +3,6 @@ import chalk from 'chalk';
 
 const result = uuidv4();
 
-console.log('->uuidV4:', chalk.blue(result));
+console.log('-uuidV4:', chalk.blue(result));
 
 export default result;
