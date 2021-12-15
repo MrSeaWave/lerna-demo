@@ -1,0 +1,16 @@
+name: On workflow Run
+
+on:
+  workflow_run:
+    workflows: [Test CI]
+    types:
+      - completed
+
+jobs:
+  workflow-run-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
