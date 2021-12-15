@@ -4,5 +4,6 @@ import chalk from 'chalk';
 const result = uuidv4();
 
 console.log('uuidV4:', chalk.blue(result));
+console.log('go go go');
 
 export default result;
