@@ -1,4 +1,4 @@
-console.log('process.env', (process.env.GITHUB_AUTH || 'tem git').slice(0, 4));
+console.log('process.env', (process.env.GITHUB_TOKEN || 'tem git').slice(0, 4));
 
 const GitHub = require('github');
 const fs = require('fs');
