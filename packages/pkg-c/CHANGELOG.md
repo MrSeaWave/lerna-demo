@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/MrSeaWave/lerna-demo/compare/demo-pkg-c@2.5.0...demo-pkg-c@2.6.0) (2021-12-15)
+
+
+### Features
+
+* go ([a1f7427](https://github.com/MrSeaWave/lerna-demo/commit/a1f7427fb0a5cc3b9c42f19b352020f75a47e22a))
+
+
+
+
+
 # [2.5.0](https://github.com/MrSeaWave/lerna-demo/compare/demo-pkg-c@2.4.0...demo-pkg-c@2.5.0) (2021-12-14)
 
 
