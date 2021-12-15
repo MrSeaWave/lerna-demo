@@ -1,6 +1,6 @@
 {
   "name": "demo-pkg-b",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "",
   "main": "lib/index.js",
   "files": [
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.1",
-    "demo-pkg-a": "^1.5.1",
+    "demo-pkg-a": "^1.5.2",
     "lodash": "^4.17.21"
   }
 }
