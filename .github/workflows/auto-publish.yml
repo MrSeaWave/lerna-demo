@@ -48,7 +48,8 @@ jobs:
           git config --global user.name GitHub Action
 
       - name: Publish 🚀
-        run: npm run release -- --yes
+        # https://github.com/lerna/lerna/issues/2788
+        run: npm run release -- --yes --no-verify-access
         # https://github.com/lerna/lerna/issues/2404
         # 登录 npmjs.com 后，找到个人中心菜单里面的 “Access Tokens” 菜单，然后点击右上角的 “Generate New Token” 生成 token 按钮
         # 註：npm access token 有三種，但只有 publish 權限且可繞過 2FA 的只有 automation token。
