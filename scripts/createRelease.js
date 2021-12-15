@@ -1,24 +1,25 @@
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 console.log('process.env', (process.env.GITHUB_TOKEN || 'tem git').slice(0, 4));
 
-const GitHub = require('github');
+const { Octokit } = require('@octokit/rest');
 const fs = require('fs');
 const path = require('path');
 
-const github = new GitHub({
-  debug: process.env.NODE_ENV === 'development'
-});
+const options = {
+  auth: process.env.GITHUB_TOKEN || process.env.GITHUB_AUTH
+};
+if (process.env.NODE_ENV === 'development') {
+  options.log = console;
+}
+const octokit = new Octokit(options);
 
-github.authenticate({
-  type: 'token',
-  token: process.env.GITHUB_TOKEN || process.env.GITHUB_AUTH
-});
+// octokit.request('/');
 
 const getChangelog = (content, version) => {
   const lines = content.split('\n');
   const changeLog = [];
   // const startPattern = new RegExp(`^#(|#) (|[) ${version}`);
   const startPattern = new RegExp(`^#(|#) .*${version}`);
-  console.log('star', startPattern);
   const stopPattern = /^#(|#) (|\[)\d+(?:\.\d+){2}/; // 前一个版本
   // eslint-disable-next-line no-unused-vars
   const skipPattern = /^`/; // 需要跳过的正则
@@ -69,7 +70,7 @@ const getMds = (allVersion = false) => {
         body: changeLog
       };
       console.log('release', releaseData);
-      github.repos.createRelease(releaseData).catch((e) => {
+      octokit.repos.createRelease(releaseData).catch((e) => {
         console.log(e);
       });
     });
