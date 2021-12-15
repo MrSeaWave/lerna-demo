@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - '*@*'
+    branches:
+      - master
 
 jobs:
   get-new-tag:
