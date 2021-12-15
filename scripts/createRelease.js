@@ -13,20 +13,23 @@ github.authenticate({
   token: process.env.GITHUB_TOKEN || process.env.GITHUB_AUTH
 });
 
-// eslint-disable-next-line no-unused-vars
 const getChangelog = (content, version) => {
   const lines = content.split('\n');
   const changeLog = [];
-  const startPattern = new RegExp(`^## ${version}`);
-  const stopPattern = /^## /; // 前一个版本
-  const skipPattern = /^`/; // 日期
+  // const startPattern = new RegExp(`^#(|#) (|[) ${version}`);
+  const startPattern = new RegExp(`^#(|#) .*${version}`);
+  console.log('star', startPattern);
+  const stopPattern = /^#(|#) (|\[)\d+(?:\.\d+){2}/; // 前一个版本
+  // eslint-disable-next-line no-unused-vars
+  const skipPattern = /^`/; // 需要跳过的正则
   let begin = false;
   for (let i = 0; i < lines.length; i += 1) {
     const line = lines[i];
     if (begin && stopPattern.test(line)) {
       break;
     }
-    if (begin && line && !skipPattern.test(line)) {
+    // if (begin && line && !skipPattern.test(line)) {
+    if (begin && line) {
       changeLog.push(line);
     }
     if (!begin) {
@@ -53,7 +56,7 @@ const getMds = (allVersion = false) => {
     console.log(versions);
     versions.map((version) => {
       const versionPkg = `${pkgName}@${version}`;
-      const changeLog = 'content' + Math.random(); // getChangelog(content, versionPkg);
+      const changeLog = getChangelog(content, version);
       if (!changeLog) {
         return;
       }
