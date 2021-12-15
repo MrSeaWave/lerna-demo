@@ -46,12 +46,13 @@ jobs:
         run: yarn install
 
       - name: Setup credentials
-        # run: |
-        #   git config --global user.email action@github.com
-        #   git config --global user.name GitHub Action
+        # 仅是为了区分，暂无其他作用
         run: |
-          git config --global user.email MrDaemon@outlook.com
-          git config --global user.name Sea
+          git config --global user.email action@github.com
+          git config --global user.name GitHub Action
+        # run: |
+        #   git config --global user.email MrDaemon@outlook.com
+        #   git config --global user.name Sea
 
       - name: Publish 🚀
         # https://github.com/lerna/lerna/issues/2788
