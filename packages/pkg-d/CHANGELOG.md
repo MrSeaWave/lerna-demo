@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/MrSeaWave/lerna-demo/compare/@sea-org/demo-pkg-d@0.11.2...@sea-org/demo-pkg-d@0.12.0) (2021-12-15)
+
+
+### Features
+
+* pkg-d ([afd505e](https://github.com/MrSeaWave/lerna-demo/commit/afd505e42653cecb272d02f0bd1d5798d5b083c6))
+
+
+
+
+
 ## 0.11.2 (2021-12-15)
 
 **Note:** Version bump only for package @sea-org/demo-pkg-d
