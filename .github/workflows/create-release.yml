@@ -1,4 +1,4 @@
-name: create release
+name: Create Release Pkgs
 
 on:
   workflow_run:
@@ -7,7 +7,7 @@ on:
       - completed
 
 jobs:
-  build-and-deploy:
+  create-release:
     runs-on: ubuntu-latest
 
     strategy:

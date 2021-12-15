@@ -1,4 +1,4 @@
-name: Deploy CI
+name: Release Event
 
 on:
   release:
@@ -7,8 +7,7 @@ on:
       - master
 
 jobs:
-  deploy-ci:
-    name: 'deploy-ci'
+  release-event:
     runs-on: ubuntu-latest
 
     strategy:
