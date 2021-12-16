@@ -51,7 +51,9 @@ jobs:
         id: cache-node-modules
         uses: actions/cache@v2
         with:
-          path: node_modules
+          path: |
+            node_modules
+            */*/node_modules
           key: ${{ runner.os }}-${{ matrix.node-version }}-nodeModules-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-nodeModules-
