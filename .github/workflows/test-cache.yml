@@ -62,5 +62,7 @@ jobs:
           steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn install
 
+      - name: Run Build 🚀
+        run: npm run build
       - name: Run test 🚀
         run: npm run test
