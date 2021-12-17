@@ -8,5 +8,7 @@ jobs:
   printInfo:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: Print Info
+        run: |
+          echo "client_payload: ${{ toJson(github.event.client_payload) }}"
           echo "Info: ${{ toJson(github) }}"
