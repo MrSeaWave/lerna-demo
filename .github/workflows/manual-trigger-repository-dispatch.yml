@@ -1,0 +1,12 @@
+name: Manual Trigger Repository_dispatch
+
+on:
+  repository_dispatch:
+    types: [opened, deleted]
+
+jobs:
+  printInfo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Info: ${{ toJson(github) }}"
